@@ -1,6 +1,6 @@
 # Reproducibility Tutorial
 
-## Topics to be covered 
+## Topics to be covered
 1. Anaconda
 2. Snakemake
 3. Docker
@@ -203,7 +203,7 @@ rule mafft:
     output:
         "{sample}.aln"
     conda:
-        "envs/fasttree.yaml"
+        "envs/mafft.yaml"
     shell:
         "mafft --auto --phylipout {input} > {output}"
 
