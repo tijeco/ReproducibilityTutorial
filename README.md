@@ -124,7 +124,7 @@ First, we need to take care of dependencies. We can set up conda environments fo
 
 make a directory called ```envs```
 
-In that directory, make the file ```mafft.yaml``` with the following contents
+In that directory, make the file ```envs/mafft.yaml``` with the following contents
 
 ```yaml
 channels:
@@ -133,7 +133,7 @@ dependencies:
   - mafft=7.310
 ```
 
-Make another file ```fasttree.yaml``` with the following contents
+Make another file ```envs/fasttree.yaml``` with the following contents
 
 ```yaml
 channels:
