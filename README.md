@@ -1,6 +1,6 @@
 # Reproducibility Tutorial
 
-**Topics to be covered **
+## Topics to be covered 
 1. Anaconda
 2. Snakemake
 3. Docker
