@@ -258,6 +258,8 @@ RUN git clone https://github.com/tijeco/ReproducibilityTutorial.git
 
 WORKDIR /home/user/ReproducibilityTutorial
 
+RUN ln -sf /bin/bash /bin/sh
+
 RUN snakemake --use-conda
 ```
 Build the docker container
