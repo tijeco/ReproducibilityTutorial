@@ -81,7 +81,7 @@ fasttree=2.1.9
 This file can be used to create a conda environment called **{your_name_here}_butterbean** using the following command
 
 
-### **DO NOT USE UPPER CASE IN {your_name_here} **
+###  DO NOT USE UPPER CASE IN {your_name_here} 
 
 
 ```bash
