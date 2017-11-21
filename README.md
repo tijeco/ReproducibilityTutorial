@@ -263,12 +263,14 @@ RUN ln -sf /bin/bash /bin/sh
 RUN snakemake --use-conda
 ```
 Build the docker container
+**DO NOT USE UPPER CASE IN {your_name_here}
 ```bash
 docker build -t {your_name_here}_butterbean ./
 
 ```
 
 Run the docker container with the following command
+
 ```bash
 docker run -it {your_name_here}_butterbean /bin/bash
 ```
