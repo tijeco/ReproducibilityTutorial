@@ -219,3 +219,31 @@ rule fasttree:
 
 
 ```
+
+**What if we want others to rerun our analysis on their computer with a non supported operating system?**
+
+**Can we distribute our pipeline as a self contained virtual environment**
+
+
+![](https://www.docker.com/sites/default/files/social/docker_twitter_share.png)
+
+Create a file ```Dockerfile``` with the following information
+
+```docker
+FROM ubuntu
+MAINTAINER Jeff Cole <coleti16@students.ecu.edu>
+
+
+RUN apt-get -qq update
+RUN apt-get install -y wget git
+RUN apt-get install -qqy python3-setuptools python3-docutils python3-flask
+RUN easy_install3 snakemake
+
+WORKDIR /home/user/
+
+RUN git clone https://github.com/tijeco/ReproducibilityTutorial.git
+
+WORKDIR /home/user/ReproducibilityTutorial
+
+RUN snakemake --use-conda
+```
