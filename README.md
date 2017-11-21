@@ -220,6 +220,12 @@ rule fasttree:
 
 ```
 
+Run the pipeline with the following command
+
+```bash
+snakemake --use-conda
+```
+
 **What if we want others to rerun our analysis on their computer with a non supported operating system?**
 
 **Can we distribute our pipeline as a self contained virtual environment**
@@ -243,7 +249,9 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     wget --quiet https://repo.continuum.io/miniconda/Miniconda3-4.3.14-Linux-x86_64.sh -O ~/miniconda.sh && \
     /bin/bash ~/miniconda.sh -b -p /opt/conda && \
     rm ~/miniconda.sh
-    
+
+ENV PATH /opt/conda/bin:$PATH
+
 WORKDIR /home/user/
 
 RUN git clone https://github.com/tijeco/ReproducibilityTutorial.git
@@ -251,4 +259,14 @@ RUN git clone https://github.com/tijeco/ReproducibilityTutorial.git
 WORKDIR /home/user/ReproducibilityTutorial
 
 RUN snakemake --use-conda
+```
+Build the docker container
+```bash
+docker build -t {your_name_here}_butterbean ./
+
+```
+
+Run the docker container with the following command
+```bash
+docker run -it {your_name_here}_butterbean /bin/bash
 ```
