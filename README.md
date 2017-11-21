@@ -80,6 +80,10 @@ fasttree=2.1.9
 
 This file can be used to create a conda environment called **{your_name_here}_butterbean** using the following command
 
+
+### **DO NOT USE UPPER CASE IN {your_name_here} **
+
+
 ```bash
 conda create --name {your_name_here}_butterbean -c bioconda --file butterbean.requirements.txt
 ```
@@ -263,7 +267,7 @@ RUN ln -sf /bin/bash /bin/sh
 RUN snakemake --use-conda
 ```
 Build the docker container
-**DO NOT USE UPPER CASE IN {your_name_here}
+
 ```bash
 docker build -t {your_name_here}_butterbean ./
 
